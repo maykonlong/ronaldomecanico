@@ -256,20 +256,24 @@ img {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
+  padding: var(--space-3) var(--space-4);
   font-family: var(--font-principal);
-  font-size: var(--text-base);
+  font-size: clamp(0.875rem, 3.8vw, 1rem);
   font-weight: 700;
-  line-height: 1.5;
+  line-height: 1.35;
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
   text-decoration: none;
-  white-space: nowrap;
+  text-align: center;
+  word-break: break-word;
+  white-space: normal;
   transition: all var(--transition-base);
   min-height: 48px;
   width: 100%;
+  max-width: 100%;
   box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
 }
 
 .btn--primary {
@@ -314,19 +318,66 @@ img {
 .btn--whatsapp {
   background: #25D366;
   color: var(--cor-branco);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
 .btn--whatsapp:hover {
   background: #20BA5A;
+  color: var(--cor-branco);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+}
+
+.btn--blue {
+  background: #2563EB;
+  color: var(--cor-branco);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+}
+
+.btn--blue:hover {
+  background: #1D4ED8;
+  color: var(--cor-branco);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
 
 .btn--lg {
-  padding: var(--space-4) var(--space-6);
-  font-size: 1.05rem;
+  padding: 0.875rem 1.25rem;
+  font-size: clamp(0.95rem, 4vw, 1.05rem);
   border-radius: var(--radius-lg);
   min-height: 52px;
+}
+
+/* Botão Flutuante Instalar App (PWA) no Canto Inferior Esquerdo */
+.btn-instalar-pwa {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  z-index: 8000;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 14px;
+  background: var(--cor-surface-elevated);
+  color: var(--cor-branco);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  width: auto !important;
+  min-height: 38px !important;
+}
+
+.btn-instalar-pwa:hover {
+  background: var(--cor-vermelho);
+  border-color: var(--cor-vermelho);
+  color: var(--cor-branco);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-red);
 }
 
 .btn--sm {
