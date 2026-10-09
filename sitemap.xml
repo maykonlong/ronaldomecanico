@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:geo="http://www.google.com/geo/schemas/sitemap-geo/1.0">
+  <url>
+    <loc>https://seudominio.com.br/</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://seudominio.com.br/public/images/hero.jpg</image:loc>
+      <image:title>Ronaldo Mecânico — Oficina Mecânica em Santana de Parnaíba</image:title>
+      <image:caption>Fachada e ambiente profissional da oficina Ronaldo Mecânico</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://seudominio.com.br/public/images/oficina.jpg</image:loc>
+      <image:title>Estrutura da Oficina Ronaldo Mecânico</image:title>
+      <image:caption>Atendimento de qualidade e equipamentos para manutenção automotiva</image:caption>
+    </image:image>
+    <geo:geo>
+      <geo:format>kml</geo:format>
+    </geo:geo>
+  </url>
+</urlset>

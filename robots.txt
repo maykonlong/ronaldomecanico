@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /src/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Exceção para arquivos públicos essenciais de JS/CSS indexáveis se necessário
+Allow: /src/css/styles.css
+Allow: /src/js/*.js
+
+# Sitemap
+Sitemap: https://seudominio.com.br/sitemap.xml

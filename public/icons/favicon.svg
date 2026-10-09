@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#17191D"/>
+  <!-- Gear -->
+  <path d="M32 10l3.8 1.4 1.8 4.5 4.2 2.4 4.7-.6 3 2.6-.6 4.7 2.4 4.2 4.5 1.8L57 32l-1.4 3.8-4.5 1.8-2.4 4.2.6 4.7-2.6 3-4.7-.6-4.2 2.4-1.8 4.5L32 57l-3.8-1.4-1.8-4.5-4.2-2.4-4.7.6-3-2.6.6-4.7-2.4-4.2-4.5-1.8L7 32l1.4-3.8 4.5-1.8 2.4-4.2-.6-4.7 2.6-3 4.7.6 4.2-2.4 1.8-4.5z" fill="none" stroke="#E53935" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="11" fill="none" stroke="#E53935" stroke-width="2.5"/>
+  <!-- R letter -->
+  <text x="32" y="38" font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle">R</text>
+</svg>
