@@ -985,6 +985,7 @@ img {
 }
 
 .about__image {
+  position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--cor-borda);
@@ -995,6 +996,13 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 68%;
+  transform: scale(1.45);
+  transition: transform var(--transition-slow);
+}
+
+.about__image:hover img {
+  transform: scale(1.52);
 }
 
 .about__image-caption {
