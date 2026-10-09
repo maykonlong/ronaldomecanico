@@ -3,7 +3,7 @@
  */
 
 /**
- * Registra o service worker e gerencia atualizações.
+ * Registra o service worker de forma transparente e em segundo plano.
  */
 export function registrarServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
@@ -14,54 +14,14 @@ export function registrarServiceWorker() {
         scope: './',
       });
 
-      /* Verificar atualizações periodicamente (a cada 1h) */
-      setInterval(() => {
+      /* Verificar atualizações em segundo plano silenciosamente */
+      if (registration) {
         registration.update();
-      }, 60 * 60 * 1000);
-
-      /* Notificar sobre nova versão disponível */
-      registration.addEventListener('updatefound', () => {
-        const novoSW = registration.installing;
-        if (!novoSW) return;
-
-        novoSW.addEventListener('statechange', () => {
-          if (novoSW.state === 'activated' && navigator.serviceWorker.controller) {
-            mostrarNotificacaoAtualizacao();
-          }
-        });
-      });
-
+      }
     } catch (erro) {
       console.warn('Service Worker: falha no registro', erro);
     }
   });
-}
-
-/**
- * Mostra um banner discreto informando que uma nova versão está disponível.
- */
-function mostrarNotificacaoAtualizacao() {
-  /* Evitar mostrar na primeira visita */
-  if (!navigator.serviceWorker.controller) return;
-
-  const banner = document.createElement('div');
-  banner.className = 'update-banner';
-  banner.setAttribute('role', 'alert');
-  banner.innerHTML = `
-    <p>Uma nova versão do site está disponível.</p>
-    <button type="button" onclick="location.reload()" aria-label="Atualizar página">
-      Atualizar
-    </button>
-    <button type="button" class="update-banner__dismiss" aria-label="Fechar notificação" onclick="this.closest('.update-banner').remove()">
-      ✕
-    </button>
-  `;
-  document.body.appendChild(banner);
-
-  /* Auto-remover após 15s */
-  setTimeout(() => {
-    if (banner.parentNode) banner.remove();
-  }, 15000);
 }
 
 /**
