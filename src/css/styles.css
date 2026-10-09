@@ -996,13 +996,13 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 68%;
-  transform: scale(1.45);
+  object-position: center 82%;
+  transform: scale(2.1);
   transition: transform var(--transition-slow);
 }
 
 .about__image:hover img {
-  transform: scale(1.52);
+  transform: scale(2.18);
 }
 
 .about__image-caption {
