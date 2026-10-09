@@ -34,6 +34,12 @@ export const CONFIG = {
     get googleMapsQuery() {
       return encodeURIComponent(`${this.rua}, ${this.numero} - ${this.bairro}, ${this.cidade} - ${this.estado}, ${this.cep}`);
     },
+    get googleMapsDir() {
+      return `https://www.google.com/maps/dir/?api=1&destination=${this.googleMapsQuery}`;
+    },
+    get wazeUrl() {
+      return `https://waze.com/ul?q=${this.googleMapsQuery}&navigate=yes`;
+    },
     get googleMapsUrl() {
       return `https://www.google.com/maps/search/?api=1&query=${this.googleMapsQuery}`;
     },

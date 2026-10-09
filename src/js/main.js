@@ -16,6 +16,7 @@ import { registrarServiceWorker, configurarInstalacao, monitorarConexao } from '
 document.addEventListener('DOMContentLoaded', () => {
   initNavegacao();
   initWhatsAppLinks();
+  initAddressLinks();
   initHorarios();
   initScrollReveal();
   initLazyMap();
@@ -231,3 +232,37 @@ function initLazyMap() {
 
   observer.observe(mapWrapper);
 }
+
+/* ══════════════════════════════════════
+   Atalhos de Endereço / Navegação
+   ══════════════════════════════════════ */
+function initAddressLinks() {
+  /* Links para Google Maps */
+  document.querySelectorAll('[data-nav="maps"]').forEach((el) => {
+    el.href = CONFIG.endereco.googleMapsDir;
+  });
+
+  /* Links para Waze */
+  document.querySelectorAll('[data-nav="waze"]').forEach((el) => {
+    el.href = CONFIG.endereco.wazeUrl;
+  });
+
+  /* Botão de copiar endereço */
+  document.querySelectorAll('[data-action="copy-address"]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(CONFIG.endereco.completo);
+        const htmlOriginal = btn.innerHTML;
+        btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Copiado!`;
+        btn.style.color = '#43A047';
+        setTimeout(() => {
+          btn.innerHTML = htmlOriginal;
+          btn.style.color = '';
+        }, 2500);
+      } catch (err) {
+        alert(`Endereço da oficina:\n${CONFIG.endereco.completo}`);
+      }
+    });
+  });
+}
+

@@ -625,6 +625,84 @@ img {
   flex-shrink: 0;
 }
 
+/* Navigation Shortcuts & Chips */
+.hero__nav-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.hero__nav-label {
+  font-size: var(--text-xs);
+  color: var(--cor-texto-muted);
+  font-weight: 600;
+  margin-right: var(--space-1);
+}
+
+.nav-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--radius-full);
+  color: var(--cor-texto);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-height: 36px;
+}
+
+.nav-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--cor-borda-hover);
+  color: var(--cor-branco);
+  transform: translateY(-1px);
+}
+
+.nav-chip--maps:hover {
+  border-color: #4285F4;
+  color: #4285F4;
+}
+
+.nav-chip--waze:hover {
+  border-color: #33CCFF;
+  color: #33CCFF;
+}
+
+.nav-chip--copy:hover {
+  border-color: var(--cor-vermelho);
+  color: var(--cor-vermelho);
+}
+
+/* Waze Button */
+.btn--waze {
+  background: #2D3038;
+  color: #33CCFF;
+  border: 1px solid rgba(51, 204, 255, 0.3);
+}
+
+.btn--waze:hover {
+  background: #33CCFF;
+  color: #0D0F12;
+  border-color: #33CCFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(51, 204, 255, 0.3);
+}
+
+.location__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
 /* Status badge */
 .status-badge {
   display: inline-flex;
